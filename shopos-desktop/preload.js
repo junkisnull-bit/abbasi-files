@@ -1,0 +1,1 @@
+const {contextBridge,ipcRenderer}=require('electron');contextBridge.exposeInMainWorld('pos',{products:()=>ipcRenderer.invoke('products:list'),saveProduct:p=>ipcRenderer.invoke('products:save',p),sales:()=>ipcRenderer.invoke('sales:list'),checkout:o=>ipcRenderer.invoke('sales:checkout',o),backup:()=>ipcRenderer.invoke('backup:save')});
